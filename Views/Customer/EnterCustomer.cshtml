@@ -1,0 +1,25 @@
+﻿@model QuestPondApp.Models.Customer
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EnterCustomer</title>
+</head>
+<body>
+    <div>
+        <form action="Submit" method="post">
+
+            Customer Code :- <input id="Text2" type="text" name="customerCode" value="@Model.CustomerCode" /><br> @*to get previous value entered by user Model is used*@
+            @Html.ValidationMessageFor(x => x.CustomerCode)<br><br>
+            Customer Name :-<input id="Text1" type="text" name="customerName" value="@Model.CustomerName" /><br><br>
+            @Html.ValidationMessageFor(x => x.CustomerName)<br><br>
+            <input id="Submit1" type="submit" value="submit" />
+
+        </form>
+    </div>
+    @*@Html.ValidationSummary()*@
+</body>
+</html>

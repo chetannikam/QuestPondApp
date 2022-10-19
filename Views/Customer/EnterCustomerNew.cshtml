@@ -1,0 +1,30 @@
+﻿@model QuestPondApp.Models.Customer
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EnterCustomer</title>
+
+    @*CLient Side validation demo *@
+    <script src="~/Scripts/jquery-3.6.0.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+</head>
+<body>
+    <div>
+        <form action="Submit" method="post">
+
+            Customer Code :- @Html.TextBoxFor(m=>m.CustomerCode)<br> @*Html helper class to get values*@
+            @Html.ValidationMessageFor(x => x.CustomerCode)<br>
+            Customer Name :-@Html.TextBoxFor(m=>m.CustomerName)<br>
+            @Html.ValidationMessageFor(x => x.CustomerName)<br><br>
+            <input id="Submit1" type="submit" value="submit" />
+
+        </form>
+    </div>
+    @*@Html.ValidationSummary()*@
+</body>
+</html>
